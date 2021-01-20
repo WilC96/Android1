@@ -36,10 +36,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openLocation(View view) {
-
+        /*
         String location = editTextLoc.getText().toString();
 
-        Uri addressUri = Uri.parse("geo: 51.5, 0.07?q= " + location);
+        Uri addressUri = Uri.parse("geo:51.5,0.07?q=" + location);
         Intent intent = new Intent(Intent.ACTION_VIEW, addressUri);
 
         if (intent.resolveActivity(getPackageManager()) != null) {
@@ -47,16 +47,15 @@ public class MainActivity extends AppCompatActivity {
         } else {
             Log.d("ImplicitIntents", "Can't handle this intent!");
         }
-
-        /*Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("geo: 51.5, 0.07"));
-        startActivity(i);
          */
+
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("geo: 51.5, 0.07"));
+        startActivity(intent);
+
     }
 
     public void launchWebsite(View view) {
         /*
-        Commented out as it don't work
-
         String url = editTextUri.getText().toString();
 
         Uri webpage = Uri.parse(url);
@@ -70,19 +69,15 @@ public class MainActivity extends AppCompatActivity {
 
          */
 
-        Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse("http://developer.android.com"));
-        startActivity(i);
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://developer.android.com"));
+        startActivity(intent);
 
     }
 
     public void shareText(View view) {
         Intent intent = new Intent(Intent.ACTION_DIAL, Uri.parse("tel: 12345"));
+        startActivity(intent);
 
-        if (intent.resolveActivity(getPackageManager()) != null) {
-            startActivity(intent);
-        } else {
-            Log.d("ImplicitIntents", "Can't handle this intent!");
-        }
     }
 
 }
