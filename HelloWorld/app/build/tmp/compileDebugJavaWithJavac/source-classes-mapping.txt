@@ -1,0 +1,4 @@
+com/wil/helloworld/BuildConfig.java
+ com.wil.helloworld.BuildConfig
+com/wil/helloworld/MainActivity.java
+ com.wil.helloworld.MainActivity
